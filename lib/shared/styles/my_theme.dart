@@ -16,8 +16,8 @@ class MyThemeData {
         onError: WHITE_COLOR,
         background: GREEN_BACKGROUND,
         onBackground: BLACK_COLOR,
-        surface: WHITE_COLOR,
-        onSurface: WHITE_COLOR),
+        surface: BLACK_COLOR,
+        onSurface: BLACK_COLOR),
     appBarTheme: AppBarTheme(
       iconTheme: IconThemeData(color: WHITE_COLOR),
       centerTitle: false,
@@ -38,6 +38,9 @@ class MyThemeData {
         fontWeight: FontWeight.bold,
         color: GREEN_COLOR,
       ),
+    ),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: PRIMARY_COLOR,
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: WHITE_COLOR,
