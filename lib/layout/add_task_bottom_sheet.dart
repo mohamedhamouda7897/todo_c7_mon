@@ -123,18 +123,26 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                         date: DateUtils.dateOnly(selectedDate)
                             .microsecondsSinceEpoch);
                     showLoading(context, 'Loading...', isCancellable: false);
-                    AddTaskToFirestore(task).then((value) {
-                      hideLoading(context);
-                      showMessage(context, 'Successfully', "Task Added", 'Ok',
-                          () {
-                        Navigator.pop(context);
-                        Navigator.pop(context);
-                        setState(() {});
-                      },
-                          isCancellable: false,
-                          negBtn: 'Cancel',
-                          negAction: () {});
+                    AddTaskToFirestore(task);
+                    hideLoading(context);
+                    showMessage(context, 'Successfully', "Task Added", 'Ok',
+                        () {
+                      Navigator.pop(context);
+                      Navigator.pop(context);
+                      setState(() {});
                     });
+                    //     .then((value) {
+                    //   hideLoading(context);
+                    //   showMessage(context, 'Successfully', "Task Added", 'Ok',
+                    //       () {
+                    //     Navigator.pop(context);
+                    //     Navigator.pop(context);
+                    //     setState(() {});
+                    //   },
+                    //       isCancellable: false,
+                    //       negBtn: 'Cancel',
+                    //       negAction: () {});
+                    // });
                   }
                 },
                 child: Text('Add Task'))
